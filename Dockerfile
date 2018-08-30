@@ -30,7 +30,7 @@ RUN /opt/etherpad/bin/installDeps.sh
 
 # Create user
 RUN useradd -r -u 1001 -g nogroup epad
-RUN chown -R epad:epad /opt/etherpad
+RUN chown -R epad:nogroup /opt/etherpad
 
 # Add conf files
 ADD settings.json /opt/etherpad/settings.json
