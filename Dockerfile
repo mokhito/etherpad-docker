@@ -29,7 +29,7 @@ RUN cd /opt && git clone https://github.com/ether/etherpad-lite.git etherpad
 RUN /opt/etherpad/bin/installDeps.sh
 
 # Create user
-RUN useradd -r -u 1001 -g epad epad
+RUN useradd -r -u 1001 -g nogroup epad
 RUN chown -R epad:epad /opt/etherpad
 
 # Add conf files
