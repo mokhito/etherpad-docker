@@ -28,6 +28,10 @@ RUN cd /opt && git clone https://github.com/ether/etherpad-lite.git etherpad
 # Install node dependencies
 RUN /opt/etherpad/bin/installDeps.sh
 
+# Create user
+RUN useradd -r -u 1001 -g epad epad
+RUN chown -R epad:epad /opt/etherpad
+
 # Add conf files
 ADD settings.json /opt/etherpad/settings.json
 ADD supervisor.conf /etc/supervisor/supervisor.conf
